@@ -58,7 +58,7 @@ class User(UserMixin, db.Model):
 
     #basically remove function
     def unfollow(self, user):
-        if self.is_following():
+        if self.is_following(user):
             self.followed.remove(user)
 
     def is_following(self, user):
